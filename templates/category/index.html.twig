@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="text-center">{{ category.title }}</h1>
+        <section class="regular-posts">
+            <article class="post">
+                <div>{{ category.description }}</div>
+            </article>
+        </section>
+    </div>
+{% endblock %}
