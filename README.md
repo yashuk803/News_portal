@@ -2,7 +2,7 @@ NEWS PORTAL ON SYMFONY 4
 ===================
 
 This is new portal on symfony 4. 
-Now this portal have age categories and main page posts
+Now this portal have page categories and main page with posts
 
 Installation
 ------------
