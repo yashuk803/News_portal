@@ -24,7 +24,14 @@ final class Collection implements \IteratorAggregate
         return new \ArrayIterator($this->categories);
     }
 
-    public function getCategoryByName($name)
+    /**
+     * Return null or one category
+     * in array CategoryModel
+     *
+     * @param $name
+     * @return CategoryModel|null
+     */
+    public function getCategoryByName($name): ?CategoryModel
     {
         foreach ($this->categories as $category) {
             if ($category->getTitle() === $name) {
