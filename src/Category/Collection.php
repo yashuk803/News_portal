@@ -27,10 +27,9 @@ final class Collection implements \IteratorAggregate
     public function getCategoryByName($name)
     {
         foreach ($this->categories as $category) {
-            if($category->getTitle() === $name) {
+            if ($category->getTitle() === $name) {
                 return $category;
             }
         }
     }
-
 }

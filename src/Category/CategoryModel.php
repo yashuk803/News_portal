@@ -28,6 +28,7 @@ final class CategoryModel
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
         return $this;
     }
     public function getTitle(): string
@@ -37,6 +38,7 @@ final class CategoryModel
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
         return $this;
     }
 }

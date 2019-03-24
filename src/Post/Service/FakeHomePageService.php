@@ -9,6 +9,7 @@ final class FakeHomePageService implements HomePageServiceInterface
 {
     /**
      * Count generation fake posts
+     *
      * @var int
      */
     private $postsLimit;
@@ -20,13 +21,13 @@ final class FakeHomePageService implements HomePageServiceInterface
 
     /**
      * Constructor.
+     *
      * @param int $postsLimit this param is set in services.yaml
      * (app.home_page_posts_limit = 10)
      */
     public function __construct(int $postsLimit)
     {
         $this->postsLimit = $postsLimit;
-
     }
 
     /**
@@ -37,7 +38,6 @@ final class FakeHomePageService implements HomePageServiceInterface
      */
     public function getPosts(): Collection
     {
-
         $collection = new Collection();
 
         $faker = \Faker\Factory::create();
@@ -49,7 +49,7 @@ final class FakeHomePageService implements HomePageServiceInterface
                     self::CATEGORY_WORLD,
                     self::CATEGORY_SPORT,
                     self::CATEGORY_IT,
-                    self::CATEGORY_SCINCE
+                    self::CATEGORY_SCINCE,
                 ]),
                 $faker->sentence,
                 $faker->dateTime

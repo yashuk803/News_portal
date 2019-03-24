@@ -9,6 +9,7 @@ final class FakeCategoryPageService implements CategoryPageServiceInterface
 {
     /**
      * Count generation fake categories
+     *
      * @var int
      */
     private $categoriesLimit;
@@ -20,6 +21,7 @@ final class FakeCategoryPageService implements CategoryPageServiceInterface
 
     /**
      * Constructor.
+     *
      * @param int $categoriesLimit this param is set in services.yaml
      * (app.category_page_categories_limit = 4)
      */
@@ -46,7 +48,7 @@ final class FakeCategoryPageService implements CategoryPageServiceInterface
                     self::CATEGORY_WORLD,
                     self::CATEGORY_SPORT,
                     self::CATEGORY_IT,
-                    self::CATEGORY_SCINCE
+                    self::CATEGORY_SCINCE,
                 ]),
                 $faker->realText(1000, 1)
             );
