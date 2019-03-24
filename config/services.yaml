@@ -32,6 +32,6 @@ services:
         arguments:
             - '%app.home_page_posts_limit%'
 
-    App\Post\Service\FakeCategoryPageService:
+    App\Category\Service\FakeCategoryPageService:
         arguments:
             - '%app.category_page_categories_limit%'

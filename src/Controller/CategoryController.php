@@ -10,9 +10,8 @@ class CategoryController extends AbstractController
 {
     /**
      * Renders site category page.
-     * Matches /category/*.
      *
-     * @Route("/category/{name}", name="category_show")
+     * @throws Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @return Response
      */
     public function show(CategoryPageServiceInterface $categoryPageService, $name): Response

@@ -4,6 +4,9 @@ namespace App\Category;
 
 final class Collection implements \IteratorAggregate
 {
+    /**
+     * @var CategoryModel[]
+     */
     private $categories;
 
     public function __construct(CategoryModel ...$categories)

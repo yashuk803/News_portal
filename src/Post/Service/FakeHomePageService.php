@@ -4,11 +4,13 @@ namespace App\Post\Service;
 
 use App\Post\Collection;
 use App\Post\PostModel;
-use Psr\Log\LoggerInterface;
 
 final class FakeHomePageService implements HomePageServiceInterface
 {
-    private $logger;
+    /**
+     * Count generation fake posts
+     * @var int
+     */
     private $postsLimit;
 
     const CATEGORY_WORLD = 'World';
@@ -16,14 +18,25 @@ final class FakeHomePageService implements HomePageServiceInterface
     const CATEGORY_IT = 'IT';
     const CATEGORY_SCINCE = 'Science';
 
-    public function __construct(int $postsLimit, LoggerInterface $logger)
+    /**
+     * Constructor.
+     * @param int $postsLimit this param is set in services.yaml
+     * (app.home_page_posts_limit = 10)
+     */
+    public function __construct(int $postsLimit)
     {
         $this->postsLimit = $postsLimit;
-        $this->logger = $logger;
+
     }
+
+    /**
+     * Method for generated fake posts.
+     * Use library Faker
+     *
+     * @return Collection
+     */
     public function getPosts(): Collection
     {
-        $this->logger->debug('Called fake home page service');
 
         $collection = new Collection();
 
