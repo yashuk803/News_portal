@@ -29,7 +29,8 @@ final class Collection implements \IteratorAggregate
      * in array CategoryModel
      *
      * @param $name
-     * @return CategoryModel|null
+     *
+     * @return null|CategoryModel
      */
     public function getCategoryByName($name): ?CategoryModel
     {

@@ -23,7 +23,7 @@ final class Collection implements \IteratorAggregate
      * This method return one post for
      * block top post
      *
-     * @return PostModel|null
+     * @return null|PostModel
      */
     public function getOneFromTop(): ?PostModel
     {
@@ -34,6 +34,7 @@ final class Collection implements \IteratorAggregate
      * This method generated different number of posts
      *
      * @param int $quantity
+     *
      * @return iterable
      */
     public function getFromTop(int $quantity = 1): iterable
