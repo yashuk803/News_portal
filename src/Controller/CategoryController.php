@@ -23,7 +23,7 @@ class CategoryController extends AbstractController
             throw $this->createNotFoundException('The category does not exist');
         }
 
-        return $this->render('category/index.html.twig', [
+        return $this->render('category/show.html.twig', [
             'category' => $category,
         ]);
     }
