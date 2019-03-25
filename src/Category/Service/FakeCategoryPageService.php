@@ -19,12 +19,6 @@ final class FakeCategoryPageService implements CategoryPageServiceInterface
     const CATEGORY_IT = 'IT';
     const CATEGORY_SCINCE = 'Science';
 
-    /**
-     * Constructor.
-     *
-     * @param int $categoriesLimit this param is set in services.yaml
-     * (app.category_page_categories_limit = 4)
-     */
     public function __construct(int $categoriesLimit)
     {
         $this->categoriesLimit = $categoriesLimit;

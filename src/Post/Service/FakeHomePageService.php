@@ -19,12 +19,6 @@ final class FakeHomePageService implements HomePageServiceInterface
     const CATEGORY_IT = 'IT';
     const CATEGORY_SCINCE = 'Science';
 
-    /**
-     * Constructor.
-     *
-     * @param int $postsLimit this param is set in services.yaml
-     * (app.home_page_posts_limit = 10)
-     */
     public function __construct(int $postsLimit)
     {
         $this->postsLimit = $postsLimit;
