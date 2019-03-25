@@ -17,7 +17,7 @@ class CategoryController extends AbstractController
      */
     public function show(CategoryPageServiceInterface $categoryPageService, $name): Response
     {
-        $category = $categoryPageService->getCategories()->getCategoryByName($name);
+        $category = $categoryPageService->getCategories()->findByName($name);
 
         if (!$category) {
             throw $this->createNotFoundException('The category does not exist');

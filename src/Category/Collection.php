@@ -32,7 +32,7 @@ final class Collection implements \IteratorAggregate
      *
      * @return null|CategoryModel
      */
-    public function getCategoryByName($name): ?CategoryModel
+    public function findByName($name): ?CategoryModel
     {
         foreach ($this->categories as $category) {
             if ($category->getTitle() === $name) {
