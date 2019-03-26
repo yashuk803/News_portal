@@ -7,17 +7,16 @@ use App\Post\PostModel;
 
 final class FakeHomePageService implements HomePageServiceInterface
 {
+    const CATEGORY_WORLD = 'World';
+    const CATEGORY_SPORT = 'Sport';
+    const CATEGORY_IT = 'IT';
+    const CATEGORY_SCINCE = 'Science';
     /**
      * Count generation fake posts
      *
      * @var int
      */
     private $postsLimit;
-
-    const CATEGORY_WORLD = 'World';
-    const CATEGORY_SPORT = 'Sport';
-    const CATEGORY_IT = 'IT';
-    const CATEGORY_SCINCE = 'Science';
 
     public function __construct(int $postsLimit)
     {

@@ -7,17 +7,17 @@ use App\Category\Collection;
 
 final class FakeCategoryPageService implements CategoryPageServiceInterface
 {
+    const CATEGORY_WORLD = 'World';
+    const CATEGORY_SPORT = 'Sport';
+    const CATEGORY_IT = 'IT';
+    const CATEGORY_SCINCE = 'Science';
+
     /**
      * Count generation fake categories
      *
      * @var int
      */
     private $categoriesLimit;
-
-    const CATEGORY_WORLD = 'World';
-    const CATEGORY_SPORT = 'Sport';
-    const CATEGORY_IT = 'IT';
-    const CATEGORY_SCINCE = 'Science';
 
     public function __construct(int $categoriesLimit)
     {
