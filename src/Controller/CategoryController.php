@@ -2,29 +2,44 @@
 
 namespace App\Controller;
 
-use App\Category\Service\CategoryPageServiceInterface;
+use App\Category\Service\CategoryPresentationServiceInterface;
+use App\Exception\EntityNotFoundException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
-class CategoryController extends AbstractController
+final class CategoryController extends AbstractController
 {
-    /**
-     * Renders site category page.
-     *
-     * @throws Symfony\Component\HttpKernel\Exception\NotFoundHttpException
-     *
-     * @return Response
-     */
-    public function show(CategoryPageServiceInterface $categoryPageService, $name): Response
-    {
-        $category = $categoryPageService->getCategories()->findByName($name);
+    private $categoryPresentation;
 
-        if (!$category) {
-            throw $this->createNotFoundException('The category does not exist');
+    public function __construct(CategoryPresentationServiceInterface $categoryPresentation)
+    {
+        $this->categoryPresentation = $categoryPresentation;
+    }
+
+    /**
+     * @Route("/category/{slug}", name="category_show", requirements={"slug"="^[A-Za-z0-9-_]+$"})
+     */
+    public function show(string $slug): Response
+    {
+        try {
+            $category = $this->categoryPresentation->findBySlug($slug);
+        } catch (EntityNotFoundException $e) {
+            throw $this->createNotFoundException('Category not found', $e);
         }
 
         return $this->render('category/show.html.twig', [
             'category' => $category,
+        ]);
+    }
+
+    public function list(string $active): Response
+    {
+        $categories = $this->categoryPresentation->getAll();
+
+        return $this->render('category/list.html.twig', [
+            'active' => $active,
+            'categories' => $categories,
         ]);
     }
 }

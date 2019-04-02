@@ -4,9 +4,6 @@ namespace App\Category;
 
 final class Collection implements \IteratorAggregate
 {
-    /**
-     * @var CategoryModel[]
-     */
     private $categories;
 
     public function __construct(CategoryModel ...$categories)
@@ -14,30 +11,13 @@ final class Collection implements \IteratorAggregate
         $this->categories = $categories;
     }
 
-    public function addCategory(CategoryModel $categories)
+    public function addCategory(CategoryModel $category): void
     {
-        $this->categories[] = $categories;
+        $this->categories[] = $category;
     }
 
     public function getIterator(): iterable
     {
         return new \ArrayIterator($this->categories);
-    }
-
-    /**
-     * Return null or one category
-     * in array CategoryModel
-     *
-     * @param $name
-     *
-     * @return null|CategoryModel
-     */
-    public function findByName($name): ?CategoryModel
-    {
-        foreach ($this->categories as $category) {
-            if ($category->getTitle() === $name) {
-                return $category;
-            }
-        }
     }
 }

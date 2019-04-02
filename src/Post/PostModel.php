@@ -33,23 +33,12 @@ final class PostModel
         return $this->category;
     }
 
-    public function setCategory(string $category): self
-    {
-        $this->category = $category;
-
-        return $this;
-    }
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
 
-        return $this;
-    }
     public function getShortDescription()
     {
         return $this->shortDescription;
@@ -61,6 +50,7 @@ final class PostModel
 
         return $this;
     }
+
     public function getImage()
     {
         return $this->image;
@@ -76,12 +66,5 @@ final class PostModel
     public function getPublicationDate(): \DateTimeInterface
     {
         return $this->publicationDate;
-    }
-
-    public function setPublicationDate(\DateTimeInterface $publicationDate): self
-    {
-        $this->publicationDate = $publicationDate;
-
-        return $this;
     }
 }

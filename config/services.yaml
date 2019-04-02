@@ -5,7 +5,6 @@
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     app.home_page_posts_limit: 10
-    app.category_page_categories_limit: 4
 
 services:
     # default configuration for services in *this* file
@@ -32,6 +31,4 @@ services:
         arguments:
             - '%app.home_page_posts_limit%'
 
-    App\Category\Service\FakeCategoryPageService:
-        arguments:
-            - '%app.category_page_categories_limit%'
+    App\Category\Service\CategoryPresentationServiceInterface: '@App\Category\Service\CategoryPresentationService'

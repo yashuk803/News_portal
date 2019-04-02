@@ -5,40 +5,39 @@ namespace App\Category;
 final class CategoryModel
 {
     private $id;
-    private $title;
+    private $slug;
+    private $name;
     private $description;
 
-    public function __construct(
-        int $id,
-        string $title,
-        string $description
-    ) {
+    public function __construct(int $id, string $slug, string $name)
+    {
         $this->id = $id;
-        $this->description = $description;
-        $this->title = $title;
+        $this->slug = $slug;
+        $this->name = $name;
     }
+
     public function getId(): int
     {
         return $this->id;
     }
-    public function getDescription(): string
+
+    public function getSlug(): string
     {
-        return $this->description;
+        return $this->slug;
     }
-    public function setDescription(string $description): self
+
+    public function getName(): string
+    {
+        return $this->name;
+    }
+
+    public function setDescription(string $description): void
     {
         $this->description = $description;
-
-        return $this;
     }
-    public function getTitle(): string
-    {
-        return $this->title;
-    }
-    public function setTitle(string $title): self
-    {
-        $this->title = $title;
 
-        return $this;
+    public function getDescription(): ?string
+    {
+        return $this->description;
     }
 }
