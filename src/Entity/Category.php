@@ -38,6 +38,11 @@ class Category
      */
     private $posts;
 
+
+
+
+
+
     public function __construct(string $title, string $slug)
     {
         $this->title = $title;
@@ -109,4 +114,7 @@ class Category
 
         return $this;
     }
+
+
+
 }

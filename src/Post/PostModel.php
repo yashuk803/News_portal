@@ -2,6 +2,8 @@
 
 namespace App\Post;
 
+use App\Entity\Category;
+
 final class PostModel
 {
     private $id;
@@ -13,7 +15,7 @@ final class PostModel
 
     public function __construct(
         int $id,
-        string $category,
+        Category $category,
         string $title,
         \DateTimeInterface $publicationDate
     ) {
@@ -28,9 +30,9 @@ final class PostModel
         return $this->id;
     }
 
-    public function getCategory(): string
+    public function getCategory()
     {
-        return $this->category;
+        return $this->category->getTitle();
     }
 
     public function getTitle(): string

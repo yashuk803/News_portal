@@ -4,9 +4,10 @@ namespace App\DataFixtures;
 
 use App\Entity\Category;
 use Doctrine\Bundle\FixturesBundle\Fixture;
+use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
 
-class CategoryFixtures extends Fixture
+class CategoryFixtures extends Fixture implements OrderedFixtureInterface
 {
     private const CATEGORIES = [
         'it' => 'IT',
@@ -27,5 +28,15 @@ class CategoryFixtures extends Fixture
         }
 
         $manager->flush();
+    }
+
+    /**
+     * Get the order of this fixture
+     *
+     * @return integer
+     */
+    function getOrder()
+    {
+        return 1;
     }
 }

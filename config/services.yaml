@@ -32,3 +32,5 @@ services:
             - '%app.home_page_posts_limit%'
 
     App\Category\Service\CategoryPresentationServiceInterface: '@App\Category\Service\CategoryPresentationService'
+    App\Post\Service\PostPresentationServiceInterface: '@App\Post\Service\PostPresentationService'
+
