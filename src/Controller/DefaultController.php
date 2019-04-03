@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Post\Service\PostPresentationServiceInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Annotation\Route;
 
 class DefaultController extends AbstractController
 {
@@ -13,7 +12,6 @@ class DefaultController extends AbstractController
 
     public function __construct(PostPresentationServiceInterface $postPresentationService)
     {
-
         $this->postPresentationService = $postPresentationService;
     }
     /**
@@ -23,8 +21,8 @@ class DefaultController extends AbstractController
      */
     public function index(): Response
     {
-
         $posts = $this->postPresentationService->getPosts();
+
         return $this->render('default/index.html.twig', [
             'posts' => $posts,
         ]);

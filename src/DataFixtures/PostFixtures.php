@@ -10,7 +10,6 @@ use Doctrine\Common\Persistence\ObjectManager;
 
 class PostFixtures extends Fixture implements OrderedFixtureInterface
 {
-
     private $categoryPresentattion;
 
     public function __construct(CategoryRepositoryInterface  $categoryPresentattion)
@@ -21,11 +20,12 @@ class PostFixtures extends Fixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         $faker = \Faker\Factory::create();
+
         for ($i = 0; $i < 10; $i++) {
             $post = new Post();
             $category = $this->categoryPresentattion->findAll();
 
-            $nCategory = $faker->numberBetween(0, (count($category)-1));
+            $nCategory = $faker->numberBetween(0, (\count($category)-1));
             $post->setTitle($faker->sentence(10));
             $post->setCategory($category[$nCategory]);
             $post->setShortDescription($faker->sentence(20));
@@ -40,9 +40,9 @@ class PostFixtures extends Fixture implements OrderedFixtureInterface
     /**
      * Get the order of this fixture
      *
-     * @return integer
+     * @return int
      */
-    function getOrder()
+    public function getOrder()
     {
         return 2;
     }

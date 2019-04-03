@@ -16,7 +16,6 @@ final class FakeHomePageService implements HomePageServiceInterface
 
     public function getPosts(): Collection
     {
-
         $collection = new Collection();
         $faker = \Faker\Factory::create();
 

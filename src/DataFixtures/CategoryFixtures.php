@@ -33,9 +33,9 @@ class CategoryFixtures extends Fixture implements OrderedFixtureInterface
     /**
      * Get the order of this fixture
      *
-     * @return integer
+     * @return int
      */
-    function getOrder()
+    public function getOrder()
     {
         return 1;
     }
